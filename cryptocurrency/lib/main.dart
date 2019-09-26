@@ -25,7 +25,8 @@ class MyApp extends StatelessWidget {
       home: HomePage(_currencies),
       theme: ThemeData(
         primarySwatch: Colors.amber,
-        primaryColor: defaultTargetPlatform == TargetPlatform.iOS ? Colors.grey[100]: null
+        primaryColor: defaultTargetPlatform == TargetPlatform.iOS ? Colors.grey[100]: null,
+        brightness: Brightness.light
       ),
       
     );

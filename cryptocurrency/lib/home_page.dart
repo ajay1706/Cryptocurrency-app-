@@ -22,8 +22,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("CryptoCurrency"),
         elevation: defaultTargetPlatform == TargetPlatform.iOS ? 0.0 : 5.0,
+      
       ),
-      body: _cryptoWidget(),
+      body: _cryptoWidget()
     );
   }
 
