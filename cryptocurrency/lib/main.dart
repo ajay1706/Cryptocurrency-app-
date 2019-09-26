@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import './home_page.dart';
 import 'package:http/http.dart' as http;
@@ -20,9 +21,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomePage(_currencies),
       theme: ThemeData(
-        primarySwatch: Colors.green
+        primarySwatch: Colors.amber,
+        primaryColor: defaultTargetPlatform == TargetPlatform.iOS ? Colors.grey[100]: null
       ),
       
     );

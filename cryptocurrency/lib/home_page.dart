@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -11,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
    List currencies;
-  final List<MaterialColor> _colors = [Colors.indigo, Colors.red];
+  final List<MaterialColor> _colors = [Colors.indigo, Colors.red, Colors.teal];
 
 
 
@@ -20,6 +21,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("CryptoCurrency"),
+        elevation: defaultTargetPlatform == TargetPlatform.iOS ? 0.0 : 5.0,
       ),
       body: _cryptoWidget(),
     );
@@ -58,7 +60,11 @@ class _HomePageState extends State<HomePage> {
       subtitle: _getSubtitleText(
           currency['price_usd'], currency['percent_change_1h']),
       trailing: CircleAvatar(
-        child: Text(currency['rank']),
+        child: Text(currency['rank'],
+        style: TextStyle(color: Colors.black,
+        fontWeight: FontWeight.bold),),
+        backgroundColor: Colors.amber,
+        
       ),
       isThreeLine: true,
     );
